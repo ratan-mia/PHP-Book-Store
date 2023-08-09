@@ -138,6 +138,8 @@ foreach ($sales as $sale) {
                 e.preventDefault();
                 let formData = $(this).serialize();
 
+                console.log(formData);
+
                 $.ajax({
                     type: "POST",
                     url: "filter_data.php",
@@ -146,16 +148,17 @@ foreach ($sales as $sale) {
                         $("button[type='submit']").prop("disabled", true).text("Filtering...");
                     },
                     success: function(data) {
+                        console.log(data);
                         if (data.status === "success") {
                             // Inserting the results into the table
                             $("#resultsBody").html(data.results);
 
                             // Appending the total price to the table
-                            let totalPriceRow = `<tr>
-                    <td colspan="2"><strong>Total Price:</strong></td>
-                    <td><strong>${data.totalPrice}</strong></td>
-                </tr>`;
-                            $("#resultsBody").append(totalPriceRow);
+                            //             let totalPriceRow = `<tr>
+                            //     <td colspan="2"><strong>Total Price:</strong></td>
+                            //     <td><strong>${data.totalPrice}</strong></td>
+                            // </tr>`;
+                            //             $("#resultsBody").append(totalPriceRow);
 
                         } else {
                             alert("Server Response: " + JSON.stringify(data));

@@ -16,3 +16,27 @@ Array
     [product] => 
     [price] => 
 )
+Array
+(
+    [customer] => 
+    [product] => Clean Architecture: A Craftsman's Guide to Software Structure and Design
+    [price] => 
+)
+Array
+(
+    [customer] => Reto Fanzen
+    [product] => 
+    [price] => 
+)
+Array
+(
+    [customer] => 
+    [product] => Clean Architecture: A Craftsman's Guide to Software Structure and Design
+    [price] => 
+)
+Array
+(
+    [customer] => Reto Fanzen
+    [product] => 
+    [price] => 
+)
