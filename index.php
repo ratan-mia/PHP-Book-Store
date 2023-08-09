@@ -54,30 +54,44 @@ foreach ($sales as $sale) {
             <button id="importBtn" class="btn btn-success mb-4">Import Data</button>
         <?php else : ?>
             <form id="filterForm" method="POST">
-                <div class="form-group">
-                    <label for="customer">Customer</label>
-                    <select name="customer" class="form-control" id="customer">
-                        <option value="">-- Select Customer --</option>
-                        <?php foreach ($customers as $customer) : ?>
-                            <option value="<?= $customer['name'] ?>"><?= $customer['name'] ?></option>
-                        <?php endforeach; ?>
-                    </select>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="customer">Customer</label>
+                            <select name="customer" class="form-control" id="customer">
+                                <option value="">-- Select Customer --</option>
+                                <?php foreach ($customers as $customer) : ?>
+                                    <option value="<?= $customer['name'] ?>"><?= $customer['name'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="product">Product</label>
+                            <select name="product" class="form-control" id="product">
+                                <option value="">-- Select Product --</option>
+                                <?php foreach ($products as $product) : ?>
+                                    <option value="<?= $product['title'] ?>"><?= $product['title'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="price">Max Price</label>
+                            <input type="number" class="form-control" name="price" id="price">
+                            <!-- <input type="range" class="form-control-range" name="price" id="price" value="100" min="0" max="100"> -->
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="product">Product</label>
-                    <select name="product" class="form-control" id="product">
-                        <option value="">-- Select Product --</option>
-                        <?php foreach ($products as $product) : ?>
-                            <option value="<?= $product['title'] ?>"><?= $product['title'] ?></option>
-                        <?php endforeach; ?>
-                    </select>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" name="filter" class="btn btn-primary">Filter</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="price">Max Price</label>
-                    <input type="number" class="form-control" name="price" id="price">
-                </div>
-                <button type="submit" name="filter" class="btn btn-primary">Filter</button>
             </form>
+
 
             <table class="table mt-4">
                 <thead>
@@ -152,13 +166,6 @@ foreach ($sales as $sale) {
                         if (data.status === "success") {
                             // Inserting the results into the table
                             $("#resultsBody").html(data.results);
-
-                            // Appending the total price to the table
-                            //             let totalPriceRow = `<tr>
-                            //     <td colspan="2"><strong>Total Price:</strong></td>
-                            //     <td><strong>${data.totalPrice}</strong></td>
-                            // </tr>`;
-                            //             $("#resultsBody").append(totalPriceRow);
 
                         } else {
                             alert("Server Response: " + JSON.stringify(data));
