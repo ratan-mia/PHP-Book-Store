@@ -1,9 +1,8 @@
 <?php
-
 $host = 'localhost';
 $username = 'root';
 $password = 'root';
-$database = 'book_store';
+$database = 'book_store_test';
 
 $mysqli = new mysqli($host, $username, $password, $database);
 

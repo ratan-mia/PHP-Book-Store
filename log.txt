@@ -1,0 +1,18 @@
+Array
+(
+    [customer] => Reto Fanzen
+    [product] => 
+    [price] => 
+)
+Array
+(
+    [customer] => Reto Fanzen
+    [product] => 
+    [price] => 
+)
+Array
+(
+    [customer] => Reto Fanzen
+    [product] => 
+    [price] => 
+)
