@@ -42,5 +42,6 @@ Fork the repository.
 Create a new branch for your feature or bugfix.
 Commit your changes and open a pull request.
 After review, your changes will be merged.
+
 License
 This project is licensed under the MIT License
